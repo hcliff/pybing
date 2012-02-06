@@ -9,8 +9,11 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.11'
+
 requirements = ['httplib2']
+
+# For Python 2.5 and below, we need simplejson
 if sys.version_info < (2, 6):
     requirements += ['simplejson']
 
