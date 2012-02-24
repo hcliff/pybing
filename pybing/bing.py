@@ -40,7 +40,7 @@ class Bing(object):
         
         query_string = urllib.urlencode(kwargs)
         contents = urllib2.urlopen(constants.JSON_ENDPOINT + '?' + query_string)
-        return json.loads(contents)
+        return json.loads(contents.read())
     
     def search_web(self, query):
         return self.search(query, source_type=constants.WEB_SOURCE_TYPE)
